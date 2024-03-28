@@ -1,0 +1,43 @@
+Circuit: *** SPICE deck for cell CAM8{sch} from library CAM8BIT
+
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+vernier = 0.5
+vernier = 0.25
+Gmin = 0
+Gmin stepping aborted per request.
+
+Starting source stepping with srcstepmethod=0
+Source Step = 3.0303%
+Source Step = 33.3333%
+Source Step = 63.6364%
+Source Step = 93.9394%
+Source stepping succeeded in finding the operating point.
+
+
+Date: Mon Jul 10 21:01:26 2023
+Total elapsed time: 229.793 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3897
+traniter = 3261
+tranpoints = 1190
+accept = 1138
+rejected = 52
+matrix size = 5701
+fillins = 12566
+solver = Normal
+Thread vector: 2477.2/1175.1[4] 1003.7/208.6[4] 545.1/199.0[4] 85.0/60.0[4]  2592/500
+Matrix Compiler1: 3.58 MB object code size  4156.5/1976.1/[1354.5]
+Matrix Compiler2: 981.00 KB object code size  742.1/744.0/[175.2]
+

@@ -1,0 +1,232 @@
+*** SPICE deck for cell CAM8bit{sch} from library CAM8BIT
+*** Created on Sat Jul 08, 2023 22:53:17
+*** Last revised on Sat Jul 08, 2023 22:54:56
+*** Written on Sat Jul 08, 2023 22:54:59 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT CAM8BIT__SRAM9sh FROM CELL SRAM9sh{sch}
+.SUBCKT CAM8BIT__SRAM9sh BL BLB Q QB RD WL
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 gnd QB Q gnd NMOS L=0.044U W=0.22U
+Mnmos@1 BLB WL QB gnd NMOS L=0.044U W=0.22U
+Mnmos@2 QB Q gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@3 BLB QB net@31 gnd NMOS L=0.044U W=0.22U
+Mnmos@4 Q WL BL gnd NMOS L=0.044U W=0.22U
+Mnmos@5 net@31 RD gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@6 net@31 Q BL gnd NMOS L=0.044U W=0.22U
+Mpmos@0 vdd Q QB vdd PMOS L=0.044U W=0.286U
+Mpmos@1 Q QB vdd vdd PMOS L=0.044U W=0.286U
+
+* Spice Code nodes in cell cell 'SRAM9sh{sch}'
+vdd vdd 0 DC 1.5
+VWL WL 0 pulse 1.5 0 0 1p 1p 0.8n 1.6n
+VBL BL 0 pulse 1.5 0 0 1p 1p 0.4n 0.8n
+VBLB BLB 0 pulse 0 1.5 0 1p 1p 0.4n 0.8n
+VRD RD 0 pulse 1.5 0 0 1p 1p 1.0n 2.0n
+cload out 0 25fF
+.tran 5n
+.include D:\rl\22nm.txt
+.ENDS CAM8BIT__SRAM9sh
+
+*** SUBCIRCUIT CAM8BIT__CAM1B FROM CELL CAM1B{sch}
+.SUBCKT CAM8BIT__CAM1B BL BLB cam out RD WL
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out net@123 net@11 gnd NMOS L=0.044U W=0.44U
+Mnmos@1 net@11 cam gnd gnd NMOS L=0.044U W=0.44U
+Mnmos@2 out net@80 net@19 gnd NMOS L=0.044U W=0.44U
+Mnmos@3 net@19 net@11 gnd gnd NMOS L=0.044U W=0.44U
+Mpmos@0 vdd net@11 net@19 vdd PMOS L=0.044U W=0.44U
+Mpmos@1 net@11 net@80 out vdd PMOS L=0.044U W=0.44U
+Mpmos@2 net@19 net@123 out vdd PMOS L=0.044U W=0.44U
+Mpmos@3 vdd cam net@11 vdd PMOS L=0.044U W=0.44U
+XSRAM9sh@0 BL BLB net@123 net@80 RD WL CAM8BIT__SRAM9sh
+.ENDS CAM8BIT__CAM1B
+
+*** SUBCIRCUIT CAM8BIT__DEC3X8 FROM CELL DEC3X8{sch}
+.SUBCKT CAM8BIT__DEC3X8 in1 in2 in3 o1 o2 o3 o4 o5 o6 o7 o8
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@8 net@656 in2 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@9 o1 in1 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@10 o1 in2 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@11 gnd in3 o1 gnd NMOS L=0.044U W=0.22U
+Mnmos@12 net@825 in1 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@13 net@573 in3 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@14 o2 in1 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@15 o2 in2 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@16 gnd net@573 o2 gnd NMOS L=0.044U W=0.22U
+Mnmos@17 o3 in1 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@18 o3 net@656 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@19 gnd in3 o3 gnd NMOS L=0.044U W=0.22U
+Mnmos@20 o4 in1 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@21 o4 net@656 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@22 gnd net@573 o4 gnd NMOS L=0.044U W=0.22U
+Mnmos@23 o5 net@825 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@24 o5 in2 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@25 gnd in3 o5 gnd NMOS L=0.044U W=0.22U
+Mnmos@26 o6 net@825 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@27 o6 in2 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@28 gnd net@573 o6 gnd NMOS L=0.044U W=0.22U
+Mnmos@29 o7 net@825 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@30 o7 net@656 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@31 gnd in3 o7 gnd NMOS L=0.044U W=0.22U
+Mnmos@32 o8 net@825 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@33 o8 net@656 gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@34 gnd net@573 o8 gnd NMOS L=0.044U W=0.22U
+Mpmos@6 vdd in2 net@656 vdd PMOS L=0.044U W=0.22U
+Mpmos@7 net@568 in1 o1 vdd PMOS L=0.044U W=0.44U
+Mpmos@8 vdd in1 net@825 vdd PMOS L=0.044U W=0.22U
+Mpmos@9 vdd in3 net@573 vdd PMOS L=0.044U W=0.22U
+Mpmos@10 net@573 in2 net@568 vdd PMOS L=0.044U W=0.44U
+Mpmos@11 net@591 in1 o2 vdd PMOS L=0.044U W=0.44U
+Mpmos@12 in3 in2 net@591 vdd PMOS L=0.044U W=0.44U
+Mpmos@13 net@637 in1 o3 vdd PMOS L=0.044U W=0.44U
+Mpmos@14 net@573 net@656 net@637 vdd PMOS L=0.044U W=0.44U
+Mpmos@15 net@684 in1 o4 vdd PMOS L=0.044U W=0.44U
+Mpmos@16 in3 net@656 net@684 vdd PMOS L=0.044U W=0.44U
+Mpmos@17 net@737 net@825 o5 vdd PMOS L=0.044U W=0.44U
+Mpmos@18 net@573 in2 net@737 vdd PMOS L=0.044U W=0.44U
+Mpmos@19 net@750 net@825 o6 vdd PMOS L=0.044U W=0.44U
+Mpmos@20 in3 in2 net@750 vdd PMOS L=0.044U W=0.44U
+Mpmos@21 net@772 net@825 o7 vdd PMOS L=0.044U W=0.44U
+Mpmos@22 net@573 net@656 net@772 vdd PMOS L=0.044U W=0.44U
+Mpmos@23 net@794 net@825 o8 vdd PMOS L=0.044U W=0.44U
+Mpmos@24 in3 net@656 net@794 vdd PMOS L=0.044U W=0.44U
+.ENDS CAM8BIT__DEC3X8
+
+*** SUBCIRCUIT CAM8BIT__NAND8B FROM CELL NAND8B{sch}
+.SUBCKT CAM8BIT__NAND8B in1 in2 in3 in4 in5 in6 in7 in8 out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in1 net@9 gnd NMOS L=0.044U W=1.54U
+Mnmos@1 net@9 in2 net@10 gnd NMOS L=0.044U W=1.54U
+Mnmos@2 net@10 in3 net@11 gnd NMOS L=0.044U W=1.54U
+Mnmos@3 net@11 in4 net@175 gnd NMOS L=0.044U W=1.54U
+Mnmos@4 net@175 in5 net@26 gnd NMOS L=0.044U W=1.54U
+Mnmos@5 net@26 in6 net@24 gnd NMOS L=0.044U W=1.54U
+Mnmos@6 net@24 in7 net@25 gnd NMOS L=0.044U W=1.54U
+Mnmos@7 net@25 in8 gnd gnd NMOS L=0.044U W=1.54U
+Mpmos@0 vdd in3 out vdd PMOS L=0.044U W=0.22U
+Mpmos@1 vdd in2 out vdd PMOS L=0.044U W=0.22U
+Mpmos@2 vdd in1 out vdd PMOS L=0.044U W=0.22U
+Mpmos@3 vdd in4 out vdd PMOS L=0.044U W=0.22U
+Mpmos@4 vdd in7 out vdd PMOS L=0.044U W=0.22U
+Mpmos@5 vdd in6 out vdd PMOS L=0.044U W=0.22U
+Mpmos@6 vdd in5 out vdd PMOS L=0.044U W=0.22U
+Mpmos@7 vdd in8 out vdd PMOS L=0.044U W=0.22U
+.ENDS CAM8BIT__NAND8B
+
+*** SUBCIRCUIT CAM8BIT__inv FROM CELL inv{sch}
+.SUBCKT CAM8BIT__inv in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in gnd gnd NMOS L=0.044U W=0.374U
+Mpmos@0 vdd in out vdd PMOS L=0.044U W=0.44U
+.ENDS CAM8BIT__inv
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: CAM8bit{sch}
+XCAM1B@0 net@485 net@488 net@484 net@181 net@0 net@900 CAM8BIT__CAM1B
+XCAM1B@1 net@485 net@488 net@484 net@203 net@0 net@941 CAM8BIT__CAM1B
+XCAM1B@2 net@485 net@488 net@484 net@239 net@0 net@984 CAM8BIT__CAM1B
+XCAM1B@3 net@485 net@488 net@484 net@273 net@0 net@1028 CAM8BIT__CAM1B
+XCAM1B@4 net@485 net@488 net@484 net@311 net@0 net@1071 CAM8BIT__CAM1B
+XCAM1B@5 net@485 net@488 net@484 net@349 net@0 net@25 CAM8BIT__CAM1B
+XCAM1B@6 net@485 net@488 net@484 net@387 net@0 net@68 CAM8BIT__CAM1B
+XCAM1B@7 net@485 net@488 net@484 net@425 net@0 net@111 CAM8BIT__CAM1B
+XCAM1B@8 net@537 net@541 net@536 net@176 net@0 net@900 CAM8BIT__CAM1B
+XCAM1B@9 net@537 net@541 net@536 net@201 net@0 net@941 CAM8BIT__CAM1B
+XCAM1B@10 net@537 net@541 net@536 net@237 net@0 net@984 CAM8BIT__CAM1B
+XCAM1B@11 net@537 net@541 net@536 net@271 net@0 net@1028 CAM8BIT__CAM1B
+XCAM1B@12 net@537 net@541 net@536 net@309 net@0 net@1071 CAM8BIT__CAM1B
+XCAM1B@13 net@537 net@541 net@536 net@347 net@0 net@25 CAM8BIT__CAM1B
+XCAM1B@14 net@537 net@541 net@536 net@385 net@0 net@68 CAM8BIT__CAM1B
+XCAM1B@15 net@537 net@541 net@536 net@423 net@0 net@111 CAM8BIT__CAM1B
+XCAM1B@16 net@589 net@588 net@644 net@171 net@0 net@900 CAM8BIT__CAM1B
+XCAM1B@17 net@589 net@588 net@644 net@199 net@0 net@941 CAM8BIT__CAM1B
+XCAM1B@18 net@589 net@588 net@644 net@236 net@0 net@984 CAM8BIT__CAM1B
+XCAM1B@19 net@589 net@588 net@644 net@270 net@0 net@1028 CAM8BIT__CAM1B
+XCAM1B@20 net@589 net@588 net@644 net@308 net@0 net@1071 CAM8BIT__CAM1B
+XCAM1B@21 net@589 net@588 net@644 net@346 net@0 net@25 CAM8BIT__CAM1B
+XCAM1B@22 net@589 net@588 net@644 net@384 net@0 net@68 CAM8BIT__CAM1B
+XCAM1B@23 net@589 net@588 net@644 net@422 net@0 net@111 CAM8BIT__CAM1B
+XCAM1B@24 net@593 net@597 net@592 net@166 net@0 net@900 CAM8BIT__CAM1B
+XCAM1B@25 net@593 net@597 net@592 net@197 net@0 net@941 CAM8BIT__CAM1B
+XCAM1B@26 net@593 net@597 net@592 net@235 net@0 net@984 CAM8BIT__CAM1B
+XCAM1B@27 net@593 net@597 net@592 net@269 net@0 net@1028 CAM8BIT__CAM1B
+XCAM1B@28 net@593 net@597 net@592 net@307 net@0 net@1071 CAM8BIT__CAM1B
+XCAM1B@29 net@593 net@597 net@592 net@345 net@0 net@25 CAM8BIT__CAM1B
+XCAM1B@30 net@593 net@597 net@592 net@383 net@0 net@68 CAM8BIT__CAM1B
+XCAM1B@31 net@593 net@597 net@592 net@421 net@0 net@111 CAM8BIT__CAM1B
+XCAM1B@32 net@693 net@696 net@692 net@161 net@0 net@900 CAM8BIT__CAM1B
+XCAM1B@33 net@693 net@696 net@692 net@195 net@0 net@941 CAM8BIT__CAM1B
+XCAM1B@34 net@693 net@696 net@692 net@233 net@0 net@984 CAM8BIT__CAM1B
+XCAM1B@35 net@693 net@696 net@692 net@267 net@0 net@1028 CAM8BIT__CAM1B
+XCAM1B@36 net@693 net@696 net@692 net@305 net@0 net@1071 CAM8BIT__CAM1B
+XCAM1B@37 net@693 net@696 net@692 net@343 net@0 net@25 CAM8BIT__CAM1B
+XCAM1B@38 net@693 net@696 net@692 net@381 net@0 net@68 CAM8BIT__CAM1B
+XCAM1B@39 net@693 net@696 net@692 net@419 net@0 net@111 CAM8BIT__CAM1B
+XCAM1B@40 net@745 net@749 net@744 net@156 net@0 net@900 CAM8BIT__CAM1B
+XCAM1B@41 net@745 net@749 net@744 net@193 net@0 net@941 CAM8BIT__CAM1B
+XCAM1B@42 net@745 net@749 net@744 net@231 net@0 net@984 CAM8BIT__CAM1B
+XCAM1B@43 net@745 net@749 net@744 net@281 net@0 net@1028 CAM8BIT__CAM1B
+XCAM1B@44 net@745 net@749 net@744 net@319 net@0 net@1071 CAM8BIT__CAM1B
+XCAM1B@45 net@745 net@749 net@744 net@357 net@0 net@25 CAM8BIT__CAM1B
+XCAM1B@46 net@745 net@749 net@744 net@395 net@0 net@68 CAM8BIT__CAM1B
+XCAM1B@47 net@745 net@749 net@744 net@433 net@0 net@111 CAM8BIT__CAM1B
+XCAM1B@48 net@797 net@796 net@852 net@186 net@0 net@900 CAM8BIT__CAM1B
+XCAM1B@49 net@797 net@796 net@852 net@204 net@0 net@941 CAM8BIT__CAM1B
+XCAM1B@50 net@797 net@796 net@852 net@240 net@0 net@984 CAM8BIT__CAM1B
+XCAM1B@51 net@797 net@796 net@852 net@274 net@0 net@1028 CAM8BIT__CAM1B
+XCAM1B@52 net@797 net@796 net@852 net@312 net@0 net@1071 CAM8BIT__CAM1B
+XCAM1B@53 net@797 net@796 net@852 net@350 net@0 net@25 CAM8BIT__CAM1B
+XCAM1B@54 net@797 net@796 net@852 net@388 net@0 net@68 CAM8BIT__CAM1B
+XCAM1B@55 net@797 net@796 net@852 net@426 net@0 net@111 CAM8BIT__CAM1B
+XCAM1B@56 net@801 net@805 net@800 net@153 net@0 net@900 CAM8BIT__CAM1B
+XCAM1B@57 net@801 net@805 net@800 net@191 net@0 net@941 CAM8BIT__CAM1B
+XCAM1B@58 net@801 net@805 net@800 net@229 net@0 net@984 CAM8BIT__CAM1B
+XCAM1B@59 net@801 net@805 net@800 net@279 net@0 net@1028 CAM8BIT__CAM1B
+XCAM1B@60 net@801 net@805 net@800 net@317 net@0 net@1071 CAM8BIT__CAM1B
+XCAM1B@61 net@801 net@805 net@800 net@355 net@0 net@25 CAM8BIT__CAM1B
+XCAM1B@62 net@801 net@805 net@800 net@393 net@0 net@68 CAM8BIT__CAM1B
+XCAM1B@63 net@801 net@805 net@800 net@431 net@0 net@111 CAM8BIT__CAM1B
+XDEC3X8@0 net@483 net@482 net@481 net@900 net@941 net@984 net@1028 net@1071 net@25 net@68 net@111 CAM8BIT__DEC3X8
+XNAND8B@0 net@181 net@176 net@171 net@166 net@161 net@156 net@186 net@153 net@457 CAM8BIT__NAND8B
+XNAND8B@1 net@203 net@201 net@199 net@197 net@195 net@193 net@204 net@191 net@460 CAM8BIT__NAND8B
+XNAND8B@2 net@239 net@237 net@236 net@235 net@233 net@231 net@240 net@229 net@463 CAM8BIT__NAND8B
+XNAND8B@3 net@273 net@271 net@270 net@269 net@267 net@281 net@274 net@279 net@466 CAM8BIT__NAND8B
+XNAND8B@4 net@311 net@309 net@308 net@307 net@305 net@319 net@312 net@317 net@469 CAM8BIT__NAND8B
+XNAND8B@5 net@349 net@347 net@346 net@345 net@343 net@357 net@350 net@355 net@471 CAM8BIT__NAND8B
+XNAND8B@6 net@387 net@385 net@384 net@383 net@381 net@395 net@388 net@393 net@475 CAM8BIT__NAND8B
+XNAND8B@7 net@425 net@423 net@422 net@421 net@419 net@433 net@426 net@431 net@478 CAM8BIT__NAND8B
+XNAND8B@8 net@457 net@460 net@463 net@466 net@469 net@471 net@475 net@478 NAND8B@8_out CAM8BIT__NAND8B
+Xinv@0 net@485 net@488 CAM8BIT__inv
+Xinv@1 net@537 net@541 CAM8BIT__inv
+Xinv@2 net@589 net@588 CAM8BIT__inv
+Xinv@3 net@593 net@597 CAM8BIT__inv
+Xinv@4 net@693 net@696 CAM8BIT__inv
+Xinv@5 net@745 net@749 CAM8BIT__inv
+Xinv@6 net@797 net@796 CAM8BIT__inv
+Xinv@7 net@801 net@805 CAM8BIT__inv
+
+* Spice Code nodes in cell cell 'CAM8bit{sch}'
+vdd vdd 0 DC 1.3
+Vc c 0 DC 1.3 
+Vb b 0 DC 0 
+Va a 0 DC 0 
+Vb1 b1 0 DC 1.3
+Vb2 b2 0 DC 1.3
+Vb3 b3 0 DC 1.3
+Vb4 b4 0 DC 1.3
+Vb5 b5 0 DC 1.3
+Vb6 b6 0 DC 1.3
+Vb7 b7 0 DC 1.3 
+Vb8 b8 0 DC 1.3
+cload out 0 25fF
+.tran 120n
+.include D:\rl\22nm.txt
+.END

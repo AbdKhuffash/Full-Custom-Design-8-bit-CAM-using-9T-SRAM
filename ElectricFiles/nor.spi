@@ -1,0 +1,24 @@
+*** SPICE deck for cell nor{sch} from library invert
+*** Created on Fri May 26, 2023 21:46:43
+*** Last revised on Sun Jul 02, 2023 21:34:05
+*** Written on Sun Jul 02, 2023 22:03:48 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: nor{sch}
+Mnmos@0 out y gnd gnd NMOS L=0.18U W=0.9U
+Mnmos@1 out x_1 gnd gnd NMOS L=0.18U W=0.9U
+Mpmos@0 vdd x net@9 vdd PMOS L=0.18U W=1.8U
+Mpmos@1 net@9 y out vdd PMOS L=0.18U W=1.8U
+
+* Spice Code nodes in cell cell 'nor{sch}'
+vdd vdd 0 DC 5
+vx x 0 pulse 5 0 100p 100p 100p 400p 1n
+vx1 x_1 0 pulse 5 0 100p 100p 100p 400p 1n
+vy y 0 pulse 5 0 100p 100p 100p 800p 1.8n
+cload out 0 20fF
+.tran 5n
+.include D:\rl\C4_models.txt
+.END

@@ -1,0 +1,54 @@
+*** SPICE deck for cell Full{lay} from library FullAdder
+*** Created on Wed Jun 14, 2023 09:27:55
+*** Last revised on Wed Jun 14, 2023 20:41:41
+*** Written on Wed Jun 14, 2023 20:42:03 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: Full{lay}
+Mnmos@0 gnd b net@47 gnd NMOS L=0.6U W=6U AS=5.4P AD=27P PS=7.8U PD=35.1U
+Mnmos@1 net@47 a net@49 gnd NMOS L=0.6U W=6U AS=7.05P AD=5.4P PS=9.3U PD=7.8U
+Mnmos@2 gnd net@49 net@79 gnd NMOS L=0.6U W=6U AS=5.4P AD=27P PS=7.8U PD=35.1U
+Mnmos@3 net@79 a net@81 gnd NMOS L=0.6U W=6U AS=7.35P AD=5.4P PS=9.5U PD=7.8U
+Mnmos@4 gnd net@49 net@98 gnd NMOS L=0.6U W=6U AS=5.4P AD=27P PS=7.8U PD=35.1U
+Mnmos@5 net@98 b net@100 gnd NMOS L=0.6U W=6U AS=7.35P AD=5.4P PS=9.5U PD=7.8U
+Mnmos@16 gnd net@100 net@212 gnd NMOS L=0.6U W=6U AS=5.4P AD=27P PS=7.8U PD=35.1U
+Mnmos@17 net@212 net@81 net@223 gnd NMOS L=0.6U W=6U AS=7.35P AD=5.4P PS=9.5U PD=7.8U
+Mnmos@18 gnd c net@371 gnd NMOS L=0.6U W=6U AS=5.4P AD=27P PS=7.8U PD=35.1U
+Mnmos@19 net@371 net@223 net@373 gnd NMOS L=0.6U W=6U AS=7.05P AD=5.4P PS=9.3U PD=7.8U
+Mnmos@20 gnd net@373 net@390 gnd NMOS L=0.6U W=6U AS=5.4P AD=27P PS=7.8U PD=35.1U
+Mnmos@21 net@390 net@223 net@392 gnd NMOS L=0.6U W=6U AS=7.35P AD=5.4P PS=9.5U PD=7.8U
+Mnmos@22 gnd net@373 net@409 gnd NMOS L=0.6U W=6U AS=5.4P AD=27P PS=7.8U PD=35.1U
+Mnmos@23 net@409 c net@351 gnd NMOS L=0.6U W=6U AS=7.35P AD=5.4P PS=9.5U PD=7.8U
+Mnmos@24 gnd net@351 net@408 gnd NMOS L=0.6U W=6U AS=5.4P AD=27P PS=7.8U PD=35.1U
+Mnmos@25 net@408 net@392 s gnd NMOS L=0.6U W=6U AS=7.35P AD=5.4P PS=9.5U PD=7.8U
+Mnmos@28 gnd net@49 net@541 gnd NMOS L=0.6U W=6U AS=5.4P AD=27P PS=7.8U PD=35.1U
+Mnmos@29 net@541 net@373 cout gnd NMOS L=0.6U W=6U AS=7.35P AD=5.4P PS=9.5U PD=7.8U
+Mpmos@0 vdd b net@49 vdd PMOS L=0.6U W=3U AS=7.05P AD=14.85P PS=9.3U PD=21.3U
+Mpmos@1 net@49 a vdd vdd PMOS L=0.6U W=3U AS=14.85P AD=7.05P PS=21.3U PD=9.3U
+Mpmos@2 vdd net@49 net@81 vdd PMOS L=0.6U W=3U AS=7.35P AD=14.85P PS=9.5U PD=21.3U
+Mpmos@3 net@81 a vdd vdd PMOS L=0.6U W=3U AS=14.85P AD=7.35P PS=21.3U PD=9.5U
+Mpmos@4 vdd net@49 net@100 vdd PMOS L=0.6U W=3U AS=7.35P AD=14.85P PS=9.5U PD=21.3U
+Mpmos@5 net@100 b vdd vdd PMOS L=0.6U W=3U AS=14.85P AD=7.35P PS=21.3U PD=9.5U
+Mpmos@16 vdd net@100 net@223 vdd PMOS L=0.6U W=3U AS=7.35P AD=14.85P PS=9.5U PD=21.3U
+Mpmos@17 net@223 net@81 vdd vdd PMOS L=0.6U W=3U AS=14.85P AD=7.35P PS=21.3U PD=9.5U
+Mpmos@18 vdd c net@373 vdd PMOS L=0.6U W=3U AS=7.05P AD=14.85P PS=9.3U PD=21.3U
+Mpmos@19 net@373 net@223 vdd vdd PMOS L=0.6U W=3U AS=14.85P AD=7.05P PS=21.3U PD=9.3U
+Mpmos@20 vdd net@373 net@392 vdd PMOS L=0.6U W=3U AS=7.35P AD=14.85P PS=9.5U PD=21.3U
+Mpmos@21 net@392 net@223 vdd vdd PMOS L=0.6U W=3U AS=14.85P AD=7.35P PS=21.3U PD=9.5U
+Mpmos@22 vdd net@373 net@351 vdd PMOS L=0.6U W=3U AS=7.35P AD=14.85P PS=9.5U PD=21.3U
+Mpmos@23 net@351 c vdd vdd PMOS L=0.6U W=3U AS=14.85P AD=7.35P PS=21.3U PD=9.5U
+Mpmos@24 vdd net@351 s vdd PMOS L=0.6U W=3U AS=7.35P AD=14.85P PS=9.5U PD=21.3U
+Mpmos@25 s net@392 vdd vdd PMOS L=0.6U W=3U AS=14.85P AD=7.35P PS=21.3U PD=9.5U
+Mpmos@28 vdd net@49 cout vdd PMOS L=0.6U W=3U AS=7.35P AD=14.85P PS=9.5U PD=21.3U
+Mpmos@29 cout net@373 vdd vdd PMOS L=0.6U W=3U AS=14.85P AD=7.35P PS=21.3U PD=9.5U
+
+* Spice Code nodes in cell cell 'Full{lay}'
+vdd vdd 0 DC 5
+va a 0 pulse 5 0 0 1p 1p 20n 40n
+vb b 0 pulse 5 0 0 1p 1p 40n 80n
+vc c 0 pulse 5 0 0 1p 1p 80n 160n
+cload out 0 250fF
+.tran 500n
+.include D:\rl\C5_models.txt
+.END

@@ -1,0 +1,30 @@
+*** SPICE deck for cell SRAM9sh{sch} from library CAM8BIT
+*** Created on Sun Jul 02, 2023 11:39:16
+*** Last revised on Fri Jul 07, 2023 18:33:18
+*** Written on Sat Jul 08, 2023 15:17:30 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: SRAM9sh{sch}
+Mnmos@0 gnd QB Q gnd NMOS L=0.044U W=0.22U
+Mnmos@1 BLB WL QB gnd NMOS L=0.044U W=0.22U
+Mnmos@2 QB Q gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@3 BLB QB net@31 gnd NMOS L=0.044U W=0.22U
+Mnmos@4 Q WL BL gnd NMOS L=0.044U W=0.22U
+Mnmos@5 net@31 RD gnd gnd NMOS L=0.044U W=0.22U
+Mnmos@6 net@31 Q BL gnd NMOS L=0.044U W=0.22U
+Mpmos@0 vdd Q QB vdd PMOS L=0.044U W=0.286U
+Mpmos@1 Q QB vdd vdd PMOS L=0.044U W=0.286U
+
+* Spice Code nodes in cell cell 'SRAM9sh{sch}'
+vdd vdd 0 DC 1.5
+VWL WL 0 pulse 1.5 0 0 1p 1p 0.8n 1.6n
+VBL BL 0 pulse 1.5 0 0 1p 1p 0.4n 0.8n
+VBLB BLB 0 pulse 0 1.5 0 1p 1p 0.4n 0.8n
+VRD RD 0 pulse 1.5 0 0 1p 1p 1.0n 2.0n
+cload out 0 25fF
+.tran 5n
+.include D:\rl\22nm.txt
+.END

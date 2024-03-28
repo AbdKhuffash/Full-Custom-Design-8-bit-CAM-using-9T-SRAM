@@ -1,0 +1,21 @@
+*** SPICE deck for cell nor{lay} from library FullAdder
+*** Created on Wed Jun 14, 2023 09:27:55
+*** Last revised on Wed Jun 14, 2023 17:41:36
+*** Written on Wed Jun 14, 2023 20:49:46 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: nor{lay}
+Mnmos@0 gnd a out gnd NMOS L=0.6U W=3U AS=8.1P AD=14.85P PS=9.8U PD=21.3U
+Mnmos@1 out b gnd gnd NMOS L=0.6U W=3U AS=14.85P AD=8.1P PS=21.3U PD=9.8U
+Mpmos@0 vdd a net@78 vdd PMOS L=0.6U W=6U AS=5.4P AD=29.7P PS=7.8U PD=38.1U
+Mpmos@1 net@78 b out vdd PMOS L=0.6U W=6U AS=8.1P AD=5.4P PS=9.8U PD=7.8U
+
+* Spice Code nodes in cell cell 'nor{lay}'
+vdd vdd 0 DC 5
+va a 0 pulse 5 0 0 1p 1p 40n 80n
+vb b 0 pulse 5 0 0 1p 1p 80n 160n
+cload out 0 250fF
+.tran 500n
+.include D:\rl\C5_models.txt
+.END

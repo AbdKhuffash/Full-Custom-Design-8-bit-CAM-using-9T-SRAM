@@ -1,0 +1,21 @@
+Circuit: *** SPICE deck for cell CAM1B{lay} from library CAM8BIT
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Sat Jul 08 15:25:19 2023
+Total elapsed time: 0.501 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 6848
+traniter = 6827
+tranpoints = 2650
+accept = 2254
+rejected = 396
+matrix size = 86
+fillins = 0
+solver = Normal
+Matrix Compiler1: 11.80 KB object code size  3.7/2.3/[0.8]
+Matrix Compiler2: 10.37 KB object code size  1.6/2.2/[1.5]
+

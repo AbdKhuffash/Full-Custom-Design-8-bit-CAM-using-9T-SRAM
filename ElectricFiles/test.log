@@ -1,0 +1,26 @@
+Circuit: *** SPICE deck for cell test{lay} from library CAM8BIT
+
+WARNING: Node GND_3 is floating.
+WARNING: Node OUT is floating.
+
+WARNING: Less than two connections to node VDD.  This node is used by VDD.
+WARNING: Less than two connections to node OUT.  This node is used by CLOAD.
+Direct Newton iteration for .op point succeeded.
+
+Date: Fri Jul 07 21:14:30 2023
+Total elapsed time: 0.183 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 2846
+traniter = 2818
+tranpoints = 1410
+accept = 1310
+rejected = 100
+matrix size = 16
+fillins = 0
+solver = Normal
+Matrix Compiler1: 1.77 KB object code size  0.5/0.3/[0.2]
+Matrix Compiler2: 1.60 KB object code size  0.2/0.3/[0.2]
+

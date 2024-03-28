@@ -1,0 +1,29 @@
+Circuit: *** SPICE deck for cell Full{lay} from library FullAdder
+
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+WARNING: Node OUT is floating.
+
+WARNING: Less than two connections to node OUT.  This node is used by CLOAD.
+Direct Newton iteration for .op point succeeded.
+
+Date: Wed Jun 14 20:42:04 2023
+Total elapsed time: 0.758 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 10611
+traniter = 10583
+tranpoints = 4246
+accept = 3517
+rejected = 729
+matrix size = 27
+fillins = 8
+solver = Normal
+Thread vector: 62.9/24.5[3] 12.3/4.9[3] 2.6/26.3[1] 0.4/7.5[1]  2592/500
+Matrix Compiler1: 3.11 KB object code size  1.2/1.1/[0.4]
+Matrix Compiler2: 3.15 KB object code size  0.9/1127.4/[0.5]
+

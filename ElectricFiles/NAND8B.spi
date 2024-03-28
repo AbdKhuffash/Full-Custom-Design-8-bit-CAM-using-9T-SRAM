@@ -1,0 +1,39 @@
+*** SPICE deck for cell NAND8B{lay} from library CAM8BIT
+*** Created on Fri Jul 07, 2023 22:56:08
+*** Last revised on Fri Jul 07, 2023 23:46:07
+*** Written on Fri Jul 07, 2023 23:46:11 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: NAND8B{lay}
+Mnmos@0 out in8 net@21 gnd NMOS L=0.044U W=1.54U AS=0.102P AD=0.046P PS=1.672U PD=0.748U
+Mnmos@1 net@21 in7 net@23 gnd NMOS L=0.044U W=1.54U AS=0.102P AD=0.102P PS=1.672U PD=1.672U
+Mnmos@2 net@23 in6 net@101 gnd NMOS L=0.044U W=1.54U AS=0.102P AD=0.102P PS=1.672U PD=1.672U
+Mnmos@3 net@101 in5 net@25 gnd NMOS L=0.044U W=1.54U AS=0.102P AD=0.102P PS=1.672U PD=1.672U
+Mnmos@4 net@25 in4 net@100 gnd NMOS L=0.044U W=1.54U AS=0.102P AD=0.102P PS=1.672U PD=1.672U
+Mnmos@5 net@100 in3 net@98 gnd NMOS L=0.044U W=1.54U AS=0.102P AD=0.102P PS=1.672U PD=1.672U
+Mnmos@6 net@98 in2 net@99 gnd NMOS L=0.044U W=1.54U AS=0.102P AD=0.102P PS=1.672U PD=1.672U
+Mnmos@7 net@99 in1 gnd gnd NMOS L=0.044U W=1.54U AS=0.31P AD=0.102P PS=4.928U PD=1.672U
+Mpmos@0 vdd in8 out vdd PMOS L=0.044U W=0.22U AS=0.046P AD=0.029P PS=0.748U PD=0.599U
+Mpmos@1 out in7 vdd vdd PMOS L=0.044U W=0.22U AS=0.029P AD=0.046P PS=0.599U PD=0.748U
+Mpmos@2 vdd in6 out vdd PMOS L=0.044U W=0.22U AS=0.046P AD=0.029P PS=0.748U PD=0.599U
+Mpmos@3 out in5 vdd vdd PMOS L=0.044U W=0.22U AS=0.029P AD=0.046P PS=0.599U PD=0.748U
+Mpmos@4 vdd in4 out vdd PMOS L=0.044U W=0.22U AS=0.046P AD=0.029P PS=0.748U PD=0.599U
+Mpmos@5 out in3 vdd vdd PMOS L=0.044U W=0.22U AS=0.029P AD=0.046P PS=0.599U PD=0.748U
+Mpmos@6 vdd in2 out vdd PMOS L=0.044U W=0.22U AS=0.046P AD=0.029P PS=0.748U PD=0.599U
+Mpmos@7 out in1 vdd vdd PMOS L=0.044U W=0.22U AS=0.029P AD=0.046P PS=0.599U PD=0.748U
+
+* Spice Code nodes in cell cell 'NAND8B{lay}'
+vdd vdd 0 DC 1.3
+Vin1 in1 0 pulse 1.3 0 0 1p 1p 2n 4n
+Vin2 in2 0 pulse 1.3 0 0 1p 1p 4n 8n
+Vin3 in3 0 pulse 1.3 0 0 1p 1p 8n 16n
+Vin4 in4 0 pulse 1.3 0 0 1p 1p 2n 4n
+Vin5 in5 0 pulse 1.3 0 0 1p 1p 4n 8n
+Vin6 in6 0 pulse 1.3 0 0 1p 1p 8n 16n
+Vin7 in7 0 pulse 1.3 0 0 1p 1p 2n 4n
+Vin8 in8 0 pulse 1.3 0 0 1p 1p 4n 8n
+cload out 0 25fF
+.tran 40n
+.include D:\rl\22nm.txt
+.END

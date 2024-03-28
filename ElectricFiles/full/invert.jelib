@@ -1,0 +1,99 @@
+# header information:
+Hinvert|9.07
+
+# Views:
+Vicon|ic
+Vschematic|sch
+
+# Technologies:
+Tmocmos|ScaleFORmocmos()D300.0
+
+# Cell inv;1{ic}
+Cinv;1{ic}||artwork|1685121940633|1685122136245|E
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NTriangle|art@2||0|0|6|6|RRR|
+NCircle|art@3||3.5|0|1|1||
+Nschematic:Bus_Pin|pin@0||-5|0||||
+Nschematic:Wire_Pin|pin@1||-3|0||||
+Nschematic:Bus_Pin|pin@2||8|0||||
+Nschematic:Wire_Pin|pin@3||4|0||||
+Aschematic:wire|net@0|||0|pin@1||-3|0|pin@0||-5|0
+Aschematic:wire|net@1|||1800|pin@3||4|0|pin@2||8|0
+Ein||D5G2;Y1;|pin@0||U
+Eout||D5G2;Y1.5;|pin@2||U
+X
+
+# Cell inv;1{sch}
+Cinv;1{sch}||schematic|1685087126548|1685126828822|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-41|-2||||
+NOff-Page|conn@1||11|-2||||
+NGround|gnd@0||-16|-24||||
+Iinv;1{ic}|inv@0||43|17.5|||D5G4;
+NTransistor|nmos@1||-18|-8|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S10|SIM_spice_model(D5G1;)SNMOS
+NWire_Pin|pin@0||-19|-2||||
+NWire_Pin|pin@1||-16|-2||||
+Ngeneric:Invisible-Pin|pin@2||-60|-13|||||SIM_spice_card(D5G1;)S[vdd vdd 0 DC 5,vin in 0 pwl 10n 0 20n 5 50n 5 60n 0,cload out 0 250fF,.measure tran tf trig v(out) val=4.5 fall=1 td=8ns trag v(out) val=0.5 fall=1,.measure tran tr trig v(out) val=0.5 rais=1 td=50ns trag v(out) val=4.5 rais=1,.tran 0 0.1us,".include D:\\rl\\C5_models.txt"]
+NTransistor|pmos@1||-18|4|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S10|SIM_spice_model(D5G1;)SPMOS
+NPower|pwr@0||-16|17||||
+Awire|net@0|||900|pwr@0||-16|17|pmos@1|d|-16|6
+Awire|net@2|||900|nmos@1|s|-16|-10|gnd@0||-16|-22
+Awire|net@4|||900|pmos@1|g|-19|4|pin@0||-19|-2
+Awire|net@5|||900|pin@0||-19|-2|nmos@1|g|-19|-8
+Awire|net@6|||1800|conn@0|y|-39|-2|pin@0||-19|-2
+Awire|net@7|||900|pmos@1|s|-16|2|pin@1||-16|-2
+Awire|net@8|||900|pin@1||-16|-2|nmos@1|d|-16|-6
+Awire|net@9|||0|conn@1|a|9|-2|pin@1||-16|-2
+Ein||D5G2;|conn@0|a|U
+Eout||D5G2;|conn@1|a|U
+X
+
+# Cell invi;1{sch}
+Cinvi;1{sch}||schematic|1685122298644|1685122509871|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+Iinv;1{ic}|inv@0||-19|8|||D5G4;
+NWire_Pin|pin@0||-6.5|8||||
+NWire_Pin|pin@1||-27|8||||
+Ngeneric:Invisible-Pin|pin@2||-17.5|0.5|||||SIM_spice_card(D5G1;)S[vdd vdd 0 DC 5,vin in 0 pwl 10n 0 20n 5 50n 5 60n 0,cload out 0 250fF,.measure tran tf trig v(out) val=4.5 fall=1 td=8ns trag v(out) val=0.5 fall=1,.measure tran tr trig v(out) val=0.5 rais=1 td=50ns trag v(out) val=4.5 rais=1,.tran 0 0.1us,".include D:\\rl\\C5_models.txt"]
+Awire|in|D5G1;||0|inv@0|in|-24|8|pin@1||-27|8
+Awire|out|D5G1;||1800|inv@0|out|-11|8|pin@0||-6.5|8
+X
+
+# Cell nor;1{sch}
+Cnor;1{sch}||schematic|1685126803046|1686747440647|
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||11|-2|-2|-0.5||
+NOff-Page|conn@1||31.5|-0.5||||
+NOff-Page|conn@2||-6|17|-2|-0.5||
+NOff-Page|conn@3||-6|11.5|-2|-0.5||
+NGround|gnd@0||6.5|-11||||
+NTransistor|nmos@0||1.5|-2|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S10.0|SIM_spice_model(D5G1;)SNMOS
+NTransistor|nmos@1||15.5|-2|||R||ATTR_length(D5G0.5;X-0.5;Y-1;)S2|ATTR_width(D5G1;X0.5;Y-1;)S10.0|SIM_spice_model(D5G1;)SNMOS
+Ngeneric:Invisible-Pin|pin@2||-24.5|23.5|||||SIM_spice_card(D5G1;)S[vdd vdd 0 DC 5,vx x 0 pulse 5 0 100p 100p 100p 400p 1n,vx1 x_1 0 pulse 5 0 100p 100p 100p 400p 1n,vy y 0 pulse 5 0 100p 100p 100p 800p 1.8n,cload out 0 20fF,.tran 5n,".include D:\\rl\\C5_models.txt"]
+NWire_Pin|pin@3||6.5|-4||||
+NWire_Pin|pin@4||6.5|0||||
+NWire_Pin|pin@6||-5|-2||||
+NWire_Pin|pin@7||17.5|-0.5||||
+NTransistor|pmos@0||4.5|17|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D43.0|SIM_spice_model(D5G1;)SPMOS
+NTransistor|pmos@1||4.5|11.5|||R|2|ATTR_length(D5G0.5;X-0.5;Y-1;)D2.0|ATTR_width(D5G1;X0.5;Y-1;)D43.0|SIM_spice_model(D5G1;)SPMOS
+NPower|pwr@0||6.5|30||||
+Awire|net@8|||900|pwr@0||6.5|30|pmos@0|d|6.5|19
+Awire|net@9|||900|pmos@0|s|6.5|15|pmos@1|d|6.5|13.5
+Awire|net@12|||1800|nmos@0|s|3.5|-4|pin@3||6.5|-4
+Awire|net@13|||1800|pin@3||6.5|-4|nmos@1|s|17.5|-4
+Awire|net@14|||900|pin@3||6.5|-4|gnd@0||6.5|-9
+Awire|net@15|||1800|nmos@0|d|3.5|0|pin@4||6.5|0
+Awire|net@16|||1800|pin@4||6.5|0|nmos@1|d|17.5|0
+Awire|net@17|||900|pmos@1|s|6.5|9.5|pin@4||6.5|0
+Awire|net@20|||1800|conn@2|y|-5|17|pmos@0|g|3.5|17
+Awire|net@21|||1800|conn@3|y|-5|11.5|pmos@1|g|3.5|11.5
+Awire|net@22|||1800|conn@0|y|12|-2|nmos@1|g|14.5|-2
+Awire|net@23|||900|conn@3|y|-5|11.5|pin@6||-5|-2
+Awire|net@24|||0|nmos@0|g|0.5|-2|pin@6||-5|-2
+Awire|net@25|||900|nmos@1|d|17.5|0|pin@7||17.5|-0.5
+Awire|net@26|||0|conn@1|a|29.5|-0.5|pin@7||17.5|-0.5
+Eout||D5G2;|conn@1|a|U
+Ex||D5G2;|conn@2|a|U
+Ex_1||D5G2;|conn@0|a|U
+Ey||D5G2;|conn@3|a|U
+X

@@ -1,0 +1,3 @@
+Circuit: *** SPICE deck for cell CAM8bit{sch} from library CAM8BIT
+
+Fatal Error: Previous analysis already found: .tran 5n

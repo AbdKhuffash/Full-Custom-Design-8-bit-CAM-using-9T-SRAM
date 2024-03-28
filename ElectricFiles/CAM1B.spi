@@ -1,0 +1,37 @@
+*** SPICE deck for cell CAM1B{lay} from library CAM8BIT
+*** Created on Sat Jul 08, 2023 14:37:10
+*** Last revised on Sat Jul 08, 2023 15:25:09
+*** Written on Sat Jul 08, 2023 15:25:17 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: CAM1B{lay}
+Mnmos@0 net@1 net@12 gnd gnd NMOS L=0.044U W=0.22U AS=0.046P AD=0.038P PS=1.113U PD=0.799U
+Mnmos@1 gnd net@1 net@12 gnd NMOS L=0.044U W=0.22U AS=0.04P AD=0.046P PS=0.814U PD=1.113U
+Mnmos@2 net@12 WL BL gnd NMOS L=0.044U W=0.22U AS=0.036P AD=0.04P PS=0.77U PD=0.814U
+Mnmos@3 BLB WL net@1 gnd NMOS L=0.044U W=0.22U AS=0.038P AD=0.036P PS=0.799U PD=0.77U
+Mnmos@4 BLB net@1 net@2 gnd NMOS L=0.044U W=0.22U AS=0.025P AD=0.036P PS=0.521U PD=0.77U
+Mnmos@5 net@2 net@12 BL gnd NMOS L=0.044U W=0.22U AS=0.036P AD=0.025P PS=0.77U PD=0.521U
+Mnmos@6 net@2 RD gnd gnd NMOS L=0.044U W=0.22U AS=0.046P AD=0.025P PS=1.113U PD=0.521U
+Mnmos@7 out net@1 net@78 gnd NMOS L=0.044U W=0.44U AS=0.051P AD=0.068P PS=0.968U PD=1.188U
+Mnmos@8 out net@12 net@93 gnd NMOS L=0.044U W=0.44U AS=0.051P AD=0.068P PS=0.968U PD=1.188U
+Mnmos@9 net@78 cam gnd gnd NMOS L=0.044U W=0.22U AS=0.046P AD=0.051P PS=1.113U PD=0.968U
+Mnmos@10 net@93 net@78 gnd gnd NMOS L=0.044U W=0.22U AS=0.046P AD=0.051P PS=1.113U PD=0.968U
+Mpmos@0 net@1 net@12 vdd vdd PMOS L=0.044U W=0.286U AS=0.058P AD=0.038P PS=1.271U PD=0.799U
+Mpmos@1 vdd net@1 net@12 vdd PMOS L=0.044U W=0.286U AS=0.04P AD=0.058P PS=0.814U PD=1.271U
+Mpmos@2 out net@12 net@78 vdd PMOS L=0.044U W=0.44U AS=0.051P AD=0.068P PS=0.968U PD=1.188U
+Mpmos@3 out net@1 net@93 vdd PMOS L=0.044U W=0.44U AS=0.051P AD=0.068P PS=0.968U PD=1.188U
+Mpmos@4 net@78 cam vdd vdd PMOS L=0.044U W=0.22U AS=0.058P AD=0.051P PS=1.271U PD=0.968U
+Mpmos@5 net@93 net@78 vdd vdd PMOS L=0.044U W=0.22U AS=0.058P AD=0.051P PS=1.271U PD=0.968U
+
+* Spice Code nodes in cell cell 'CAM1B{lay}'
+vdd vdd 0 DC 1.5
+VWL WL 0 pulse 1.5 0 0 1p 1p 4.8n 9.6n
+VBL BL 0 pulse 1.5 0 0 1p 1p 2.4n 4.8n
+VBLB BLB 0 pulse 0 1.5 0 1p 1p 2.4n 4.8n
+VRD RD 0 pulse 1.5 0 0 1p 1p 9.6n 19.2n
+Vcam cam 0 pulse 1.5 0 0 1p 1p 19.2n 38.4n
+cload out 0 25fF
+.tran 80n
+.include D:\rl\22nm.txt
+.END

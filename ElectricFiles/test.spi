@@ -1,0 +1,18 @@
+*** SPICE deck for cell test{lay} from library CAM8BIT
+*** Created on Fri Jul 07, 2023 20:36:59
+*** Last revised on Fri Jul 07, 2023 21:14:21
+*** Written on Fri Jul 07, 2023 21:14:29 by Electric VLSI Design System, version 9.07
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: test{lay}
+Mnmos@3 o i gnd_3 gnd_3 NMOS L=0.044U W=0.22U AS=0.052P AD=0.034P PS=1.298U PD=0.748U
+Mpmos@2 o i vdd_2 vdd_2 PMOS L=0.044U W=0.22U AS=0.052P AD=0.034P PS=1.298U PD=0.748U
+
+* Spice Code nodes in cell cell 'test{lay}'
+vdd vdd 0 DC 1.3
+Vi i 0 pulse 1.3 0 0 1p 1p 0.8n 1.6n
+cload out 0 25fF
+.tran 12n
+.include D:\rl\22nm.txt
+.END
