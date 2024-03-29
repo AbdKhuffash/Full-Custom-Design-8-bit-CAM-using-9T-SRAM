@@ -1,4 +1,4 @@
-# Full-Custom-Design-8-bit-CAM-using-9T-SRAM
+# Full Custom Design 8 bit CAM using 9T SRAM
 
 ## Project Overview
 This repository contains the design and development of an 8-bit Content Addressable Memory (CAM) utilizing a 9T SRAM configuration.
